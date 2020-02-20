@@ -5,11 +5,11 @@ Backup Air Data And Sensor Platform - a name I'm considering 8D
 
 Firmware for second WingThing prototype
 
-What this is not:
+**What this is not:**
 
-This should only ever be used as a backup or to augment purely VFR flight.  This is not a commerical product.  It is not certified and has not gone through the rigorous testing that commercial and certified products use.  This is purely experimental meant as a proof of concept to use inexpensive electronics as backup instrumentation.
+This should only ever be used as a backup or to augment purely VFR flight.  This is not a commerical product.  It is not certified and has not gone through the rigorous testing that commercial and certified products use.  This is purely experimental meant as a proof of concept to use inexpensive hobby sensors and microcontrollers as backup instrumentation.
 
-What this is:
+**What this is:**
 
 BADASP is a microcontroller-based platform using inexpensive sensors to provide air, magnetic and orientation data to an Android-based application in the cockpit.  You can write your own software but it is meant to transmit to the broadcast address on the Stratux ADS-B receiver acting as an access point, received by the Stratofier Android App (source code also available here).  You could also modify the Stratux source code to use the data directly if you want to only use your favorite EFB that supports Stratux.
 
@@ -17,7 +17,7 @@ This repository contains the source code to build the firmware for an ESP8266 mi
 
 All sensors besides the magnetometer use the I2C bus.  The PNI RM3100 3-axis magnetometer uses the SPI interface.  PNI sells an I2C breakout board that appears to be a little larger than the version that supports both.
 
-This is what you need:
+**This is what you need:**
 
 A microcontroller with at least one SPI and one I2C interface.  This repository assumes you are using a Wemos D1 Mini or compatible with built-in wifi.  The specific model I used also has an integrated battery charger and 18650 battery holder.
 
