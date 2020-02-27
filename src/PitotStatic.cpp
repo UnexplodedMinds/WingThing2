@@ -45,7 +45,7 @@ bool getPitotStatic( PitotStatic *pPitot )
     usTemp = ((static_cast<unsigned short int>( t1 ) << 8) | static_cast<unsigned short int>( t2 )) >> 5;
 
     pPitot->temp = ((static_cast<float>( usTemp ) * 200.0f) / 2047.0f) - 53.3f;  // 3.3 deg C offset from datasheet
-    pPitot->airspeed = (static_cast<float>( usBridge ) - 8192.0f) / 2730.0f * 200.0f; // Airspeed as a ratio of pressure count to pressure range - this very likely needs calibration.
+    pPitot->airspeed = static_cast<float>( usBridge ) - 8192.0; // Airspeed as a ratio of pressure count to pressure range - this very likely needs calibration.
     if( pPitot->airspeed < 0.0f )
         pPitot->airspeed = 0.0f;
 

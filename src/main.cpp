@@ -22,7 +22,7 @@
 #define FIRMWARE_VERSION "200"
 
 // Uncomment to enable debug prints
-// #define SERIAL_OUTPUT
+#define SERIAL_OUTPUT
 
 
 Adafruit_BMP3XX bmp;        // Adafruit BMP388 driver
@@ -183,17 +183,17 @@ void loop()
     Serial.println( fromString );
 #endif
 
-    // Heartbeat
-    if( iHB == 8 )
+    // Heartbeat every 4 seconds
+    if( iHB == 16 )
     {
         digitalWrite( D0, LOW );
         delay( 50 );
         digitalWrite( D0, HIGH );
-        delay( 450 );
+        delay( 200 );
         iHB = 0;
     }
     else
-        delay( 500 );
+        delay( 250 );
 
     iHB++;
 }
